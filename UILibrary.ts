@@ -72,6 +72,35 @@ class UIElement {
     }
 }
 
+class ScrollingFrame {
+    public elements: UIElement[]
+    public horizontalPos: number
+    public overlapSprite: Sprite
+    public horizontalSpacing: number
+    private scrollValue: number
+    public scrollSpeed: number
+
+    constructor(elements: UIElement[], horizontalPos: number, horizontalSpacing: number, overlapSprite?: Sprite) {
+        this.elements = elements
+        this.horizontalPos = horizontalPos
+        this.horizontalSpacing = horizontalSpacing
+        this.scrollValue = 0
+        this.scrollSpeed = 3
+        this.CalculatePosition()
+    }
+
+    public CalculatePosition() {
+        for (let i = 0; i < this.elements.length; i++) {
+            this.elements[i].SetPosition(this.horizontalPos, (i * this.horizontalSpacing) + (this.scrollValue * this.scrollSpeed))
+        }
+    }
+
+    public Scroll(input: number) {
+        this.scrollValue += input
+        this.CalculatePosition()
+    }
+}
+
 class BoundingBox {
     public xMin: number
     public xMax: number
