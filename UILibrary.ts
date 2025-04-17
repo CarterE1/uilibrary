@@ -181,8 +181,8 @@ namespace UILibrary {
      * @param sprite What sprite will this element appear as?
      */
     //% block
-    export function createElement(sprite: Sprite): UIElement {
-        return new UIElement(sprite)
+    export function createElement(sprite: Sprite): void{
+        let newElement = new UIElement(sprite)
     }
 
     /**
@@ -190,8 +190,8 @@ namespace UILibrary {
      * @param sprite What sprite will this element appear as?
      */
     //% block
-    export function createButton(sprite: Sprite, onClick: Function): UIElement {
-        return new UIElement(sprite, onClick)
+    export function createButton(sprite: Sprite, onClick: Function): void {
+        let newButton = new UIElement(sprite, onClick)
     }
 
     browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Pressed, function (x: number, y: number) {
