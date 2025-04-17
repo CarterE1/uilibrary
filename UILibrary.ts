@@ -73,12 +73,20 @@ class UIElement {
 }
 
 class ScrollingFrame {
+    static instances: ScrollingFrame[] = []
+    
     public elements: UIElement[]
-    public horizontalPos: number
     public overlapSprite: Sprite
+
+    public horizontalPos: number
     public horizontalSpacing: number
     private scrollValue: number
     public scrollSpeed: number
+
+    private width: number
+    private startDragY: number
+    private startScrollValue: number
+    public isDragging: boolean
 
     constructor(elements: UIElement[], horizontalPos: number, horizontalSpacing: number, overlapSprite?: Sprite) {
         this.elements = elements
@@ -87,17 +95,50 @@ class ScrollingFrame {
         this.scrollValue = 0
         this.scrollSpeed = 3
         this.CalculatePosition()
+        
+        ScrollingFrame.instances.push(this)
     }
 
     public CalculatePosition() {
         for (let i = 0; i < this.elements.length; i++) {
-            this.elements[i].SetPosition(this.horizontalPos, (i * this.horizontalSpacing) + (this.scrollValue * this.scrollSpeed))
+            this.elements[i].SetPosition(this.horizontalPos, (i * this.horizontalSpacing) + this.scrollValue)
         }
     }
 
     public Scroll(input: number) {
-        this.scrollValue += input
+        this.scrollValue += input * this.scrollSpeed
         this.CalculatePosition()
+        for (let element of this.elements) {
+            element.boundingBox.CalculateBoundingBox(element.sprite)
+        }
+    }
+
+    public CalculateWidth() {
+        let max = 0
+        for (let element of this.elements) {
+            if (element.sprite.width > max) {
+                max = element.sprite.width
+            }
+        }
+        this.width = max
+    }
+
+    public Drag(curY: number) {
+        this.scrollValue = this.startScrollValue + (curY - this.startDragY)
+        this.CalculatePosition()
+    }
+
+    static StartDrag(x: number, y: number) {
+        for (let frame of ScrollingFrame.instances) {
+            frame.CalculateWidth()
+            if (x > frame.horizontalPos - frame.width/2 && x < frame.horizontalPos + frame.width/2) {
+                frame.startDragY = y
+                frame.startScrollValue = frame.scrollValue
+                frame.isDragging = true
+                console.log("STARTED DRAG AT " + y)
+            }
+            console.log(frame.horizontalPos - frame.width/2 + " --- " + frame.horizontalPos + frame.width/2)
+        }
     }
 }
 
@@ -132,12 +173,38 @@ class BoundingBox {
 
 namespace UILibrary {
     browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Pressed, function (x: number, y: number) {
+        // Check if button is clicked
         for (let item of UIElement.instances) {
             if (item.boundingBox.IsPositionInBoundingBox(x, y)) {
                 item.OnClick()
             }
         }
+
+        //  Start drag on scrolling frames
+        for (let item of ScrollingFrame.instances) {
+            ScrollingFrame.StartDrag(x, y)
+        }
     })
+
+    browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Released, function(x: number, y: number) {
+        // End drag on scrolling frames
+        for (let item of ScrollingFrame.instances) {
+            if (item.isDragging) {
+                item.isDragging = false
+            }
+        }
+    })
+    
+    forever(function() {
+        if (browserEvents.MouseLeft.isPressed()) {
+            for (let item of ScrollingFrame.instances) {
+                if (item.isDragging) {
+                    item.Drag(browserEvents.mouseY())
+                }
+            }
+        }
+    })
+    
 }
 
 /* EXAMPLE BUTTON
