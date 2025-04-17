@@ -27,6 +27,8 @@ class UIPage {
     }
 }
 
+//% blockNamespace="UIElement"
+//% blockGap=8
 class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
@@ -174,26 +176,21 @@ class BoundingBox {
 /**
  * Custom blocks
  */
-//% weight=10 color=#0fbc11 icon="S"
+//% weight=10 color=#0fbc11 icon="U"
 namespace UILibrary {
-    /**
-     * Create a custom UI Element
-     * @param sprite What sprite will this element appear as?
-     */
-    //% block
-    export function createElement(sprite: Sprite): void{
-        let newElement = new UIElement(sprite)
+    //% block="create button $sprite, run $function when clicked || as $fg on $bg"
+    //% blockId="uilibrary_createbutton"
+    //% blockSetVariable="button"
+    //% expandableArgumentMode="toggle"
+    //% bg.defl=0
+    //% bg.shadow="colorindexpicker"
+    //% fg.defl=1
+    //% fg.shadow="colorindexpicker"
+    //% group="Create"
+    //% weight=100
+    export function createButton(sprite: Sprite, onClick: Function): UIElement {
+        return new UIElement(sprite, onClick)
     }
-
-    /**
-     * Create a custom UI Button
-     * @param sprite What sprite will this element appear as?
-     */
-    //% block
-    export function createButton(sprite: Sprite, onClick: Function): void {
-        let newButton = new UIElement(sprite, onClick)
-    }
-
     browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Pressed, function (x: number, y: number) {
         // Check if button is clicked
         for (let item of UIElement.instances) {
