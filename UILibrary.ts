@@ -14,6 +14,7 @@ namespace UILibrary {
     //% sprite.defl="mySprite"
     //% group="Elements"
     //% onClick.shadow="function"
+    //% onClick.handlerStatement = true
     //% onClick.draggableParameters
     //% weight=100
     export function createButton(sprite: Sprite, onClick: () => void): UIElement {
