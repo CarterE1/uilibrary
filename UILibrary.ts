@@ -21,7 +21,7 @@ namespace UILibrary {
     //% block="when $element is clicked run $onClick"
     //% blockId="uilibrary_buttonclickevent"
     //% element.shadow="variables_get"
-    //% sprite.defl="button"
+    //% element.defl="button"
     //% group="Elements"
     //% weight=99
     export function onButtonClick(element: UIElement, onClick: () => void): void {
