@@ -18,7 +18,6 @@ namespace UILibrary {
 
     //% block="when $element button is clicked run"
     //% element.shadow="uilibrary_createbutton"
-    //% element.defl="button"
     //% handlerStatement
     export function onButtonClick(element: UIElement, onClick: () => void) {
         element.SetOnClick(onClick)
