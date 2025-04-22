@@ -32,26 +32,24 @@ class UIElement {
     public boundingBox: BoundingBox
     public sprite: Sprite
     public onClick: Function
-    private isButton: boolean
     private hidden: boolean
 
     constructor(sprite: Sprite, onClick?: Function) {
         this.sprite = sprite
         this.boundingBox = new BoundingBox(sprite)
-
-        if (onClick != null) {
-            this.isButton = true
-            this.onClick = onClick
-        } else {
-            this.isButton = false
-        }
-
         this.hidden = false
+        if (onClick != null) {
+            this.onClick = onClick
+        }
         UIElement.instances.push(this)
     }
 
+    public SetOnClick(onClick: Function) {
+        this.onClick = onClick
+    }
+
     public OnClick() {
-        if (!this.hidden && this.isButton) {
+        if (!this.hidden && this.onClick != null) {
             this.onClick()
         }
     }

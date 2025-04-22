@@ -13,24 +13,21 @@ namespace UILibrary {
     //% sprite.shadow="variables_get"
     //% sprite.defl="mySprite"
     //% group="Elements"
-    //% onClick.shadow="buttons_onclick"
-    //% onClick.handlerStatement = true
-    //% onClick.draggableParameters
     //% weight=100
-    export function createButton(sprite: Sprite, onClick: () => void): UIElement {
-        console.log("Test")
-        return new UIElement(sprite, onClick)
+    export function createButton(sprite: Sprite): UIElement {
+        return new UIElement(sprite)
     }
 
-    //% block="create onClick function"
-    //% blockId="buttons_onclick"
-    //% weight=99
-    //% inlineInputMode=inline
+    //% block="when $element is clicked run $onClick"
+    //% blockId="uilibrary_buttonclickevent"
+    //% element.shadow="uilibrary_createbutton"
+    //% onClick.shadow="function"
     //% group="Elements"
-    export function createOnClick(): void {
-        // This block is used to create a function that can be assigned to onClick
-        // The block itself won't do anything but will allow the user to drag a function into onClick
+    //% weight=99
+    export function onButtonClick(element: UIElement, onClick: () => void): void {
+        element.onClick = onClick
     }
+
     
     browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Pressed, function (x: number, y: number) {
         // Check if button is clicked
