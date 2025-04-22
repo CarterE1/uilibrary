@@ -7,7 +7,6 @@
 namespace UILibrary {
     //% block="create button $sprite || when clicked"
     //% blockId="uilibrary_createbutton"
-    //% blockSetVariable="button"
     //% sprite.shadow="variables_get"
     //% sprite.defl="mySprite"
     //% group="Elements"
@@ -25,6 +24,16 @@ namespace UILibrary {
     //% weight=99
     export function onButtonClick(element: UIElement, onClick: () => void) {
         element.SetOnClick(onClick)
+    }
+
+    //% block="create page using $elements"
+    //% blockId="uilibrary_createpage"
+    // sprite.shadow="variables_get"
+    // sprite.defl="mySprite"
+    //% group="Pages"
+    //% weight=100
+    export function createPage(elements: UIElement[]): UIPage {
+        return new UIPage(elements)
     }
 
     
