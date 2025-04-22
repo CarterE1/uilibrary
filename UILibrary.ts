@@ -27,8 +27,6 @@ class UIPage {
     }
 }
 
-//% blockNamespace="UIElement"
-//% blockGap=8
 class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
@@ -76,7 +74,7 @@ class UIElement {
 
 class ScrollingFrame {
     static instances: ScrollingFrame[] = []
-    
+
     public elements: UIElement[]
     public overlapSprite: Sprite
 
@@ -97,7 +95,7 @@ class ScrollingFrame {
         this.scrollValue = 0
         this.scrollSpeed = 3
         this.CalculatePosition()
-        
+
         ScrollingFrame.instances.push(this)
     }
 
@@ -133,13 +131,13 @@ class ScrollingFrame {
     static StartDrag(x: number, y: number) {
         for (let frame of ScrollingFrame.instances) {
             frame.CalculateWidth()
-            if (x > frame.horizontalPos - frame.width/2 && x < frame.horizontalPos + frame.width/2) {
+            if (x > frame.horizontalPos - frame.width / 2 && x < frame.horizontalPos + frame.width / 2) {
                 frame.startDragY = y
                 frame.startScrollValue = frame.scrollValue
                 frame.isDragging = true
                 console.log("STARTED DRAG AT " + y)
             }
-            console.log(frame.horizontalPos - frame.width/2 + " --- " + frame.horizontalPos + frame.width/2)
+            console.log(frame.horizontalPos - frame.width / 2 + " --- " + frame.horizontalPos + frame.width / 2)
         }
     }
 }
@@ -176,8 +174,9 @@ class BoundingBox {
 /**
  * Custom blocks
  */
-//% weight=10 color=#0fbc11 icon="U"
+//% weight=10 color=#f29100 icon="\uf3fa"
 namespace UILibrary {
+    
     //% block="create button $sprite, run $function when clicked || as $fg on $bg"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
