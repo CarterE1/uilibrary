@@ -6,9 +6,14 @@
 //% groups=['Elements', 'Pages']
 namespace UILibrary {
     
+    //% blockId="shadowSprite"
+    export function shadowSprite(): Sprite {
+        return sprites.create(img``)
+    }
     //% block="create button $sprite with $onClick"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
+    //% sprite.shadow = "shadowSprite"
     //% group="Elements"
     //% weight=100
     export function createButton(sprite: Sprite, onClick: Function): UIElement {
