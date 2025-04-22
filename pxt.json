@@ -8,6 +8,7 @@
     },
     "files": [
         "README.md",
+        "Elements.ts",
         "UILibrary.ts"
     ],
     "testFiles": [
