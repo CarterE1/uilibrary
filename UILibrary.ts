@@ -16,7 +16,7 @@ namespace UILibrary {
     //% onClick.shadow="callback"
     //% onClick.draggableParameters
     //% onClick.defl="function () { console.log('clicked!') }"
-    //% handlerStatement = true
+    //% onClick.handlerStatement = true
     //% weight=100
     export function createButton(sprite: Sprite, onClick: () => void): UIElement {
         console.log("Test")
