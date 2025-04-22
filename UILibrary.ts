@@ -21,7 +21,6 @@ namespace UILibrary {
     //% block="when $element is clicked run $onClick"
     //% blockId="uilibrary_buttonclickevent"
     //% element.shadow="uilibrary_createbutton"
-    //% onClick.shadow="function"
     //% group="Elements"
     //% weight=99
     export function onButtonClick(element: UIElement, onClick: () => void): void {
