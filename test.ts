@@ -1,3 +1,4 @@
+
 // tests go here; this will not be compiled when this package is used as an extension.
 let testFrame = new ScrollingFrame([new UIElement(sprites.create(img`
     111111111111111111111111111111
