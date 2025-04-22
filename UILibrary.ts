@@ -10,7 +10,7 @@ namespace UILibrary {
     //% block="create button $sprite || when clicked"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
-    //% sprite.shadow="spritescreate"
+    //% sprite.shadow="sprite"
     //% sprite.defl="mySprite"
     //% group="Elements"
     //% onClick.shadow="callback"
