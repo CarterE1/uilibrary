@@ -17,6 +17,7 @@ namespace UILibrary {
     }
 
     //% block="when $element button is clicked run $onClick"
+    //% handlerStatement
     export function onButtonClick(element: UIElement, onClick: () => void) {
         element.SetOnClick(onClick)
     }
