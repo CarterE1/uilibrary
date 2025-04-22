@@ -18,7 +18,7 @@ namespace UILibrary {
         return new UIElement(sprite)
     }
 
-    //% block="when $element is clicked run $onClick"
+    //% block="when button is clicked run $onClick"
     //% blockId="uilibrary_buttonclickevent"
     //% element.defl="button"
     //% group="Elements"
