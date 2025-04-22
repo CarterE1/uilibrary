@@ -6,7 +6,7 @@
 //% groups=['Elements', 'Pages']
 namespace UILibrary {
     
-    //% block="create button $sprite with $function || as $fg on $bg"
+    //% block="create button $sprite with $function"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
     //% expandableArgumentMode="toggle"
