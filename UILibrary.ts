@@ -16,7 +16,7 @@ namespace UILibrary {
     //% onClick.draggableParameters
     //% handlerStatement = true
     //% weight=100
-    export function createButton(sprite: Sprite, onClick: Function): UIElement {
+    export function createButton(sprite: Sprite, onClick: () => void): UIElement {
         return new UIElement(sprite, onClick)
     }
     
