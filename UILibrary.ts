@@ -10,7 +10,7 @@ namespace UILibrary {
     //% block="create button $sprite with $onClick"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
-
+    //% sprite.shadow="variables_get"
     //% group="Elements"
     //% weight=100
     export function createButton(sprite: Sprite, onClick: Function): UIElement {
