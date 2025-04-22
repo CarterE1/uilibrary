@@ -12,6 +12,9 @@ namespace UILibrary {
     //% blockSetVariable="button"
     //% sprite.shadow="variables_get"
     //% group="Elements"
+    //% onClick.shadow="callback"
+    //% onClick.draggableParameters
+    //% handlerStatement = true
     //% weight=100
     export function createButton(sprite: Sprite, onClick: Function): UIElement {
         return new UIElement(sprite, onClick)
