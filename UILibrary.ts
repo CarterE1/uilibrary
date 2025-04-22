@@ -16,7 +16,7 @@ namespace UILibrary {
         return new UIElement(sprite)
     }
 
-    //% block="when $element button is clicked run $onClick"
+    //% block="when $element button is clicked run"
     //% handlerStatement
     export function onButtonClick(element: UIElement, onClick: () => void) {
         element.SetOnClick(onClick)
