@@ -19,6 +19,7 @@ namespace UILibrary {
     //% handlerStatement = true
     //% weight=100
     export function createButton(sprite: Sprite, onClick: () => void): UIElement {
+        console.log("Test")
         return new UIElement(sprite, onClick)
     }
     
