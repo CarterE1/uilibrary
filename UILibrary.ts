@@ -6,14 +6,9 @@
 //% groups=['Elements', 'Pages']
 namespace UILibrary {
     
-    //% block="create button $sprite with $function"
+    //% block="create button $sprite with $onClick"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
-    //% expandableArgumentMode="toggle"
-    //% bg.defl=0
-    //% bg.shadow="colorindexpicker"
-    //% fg.defl=1
-    //% fg.shadow="colorindexpicker"
     //% group="Elements"
     //% weight=100
     export function createButton(sprite: Sprite, onClick: Function): UIElement {
