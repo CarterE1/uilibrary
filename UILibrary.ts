@@ -5,7 +5,7 @@
 //% weight=10 color=#f29100 icon="\uf3fa"
 //% groups=['Elements', 'Pages']
 namespace UILibrary {
-        //% block="create button $sprite || when clicked"
+    //% block="create button $sprite || when clicked"
     //% blockId="uilibrary_createbutton"
     //% blockSetVariable="button"
     //% sprite.shadow="variables_get"
@@ -17,6 +17,8 @@ namespace UILibrary {
     }
 
     //% block="when $element button is clicked run"
+    //% sprite.shadow="variables_get"
+    //% sprite.defl="button"
     //% handlerStatement
     export function onButtonClick(element: UIElement, onClick: () => void) {
         element.SetOnClick(onClick)
