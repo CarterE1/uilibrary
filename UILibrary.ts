@@ -13,7 +13,7 @@ namespace UILibrary {
     //% sprite.shadow="variables_get"
     //% sprite.defl="mySprite"
     //% group="Elements"
-    //% onClick.shadow="callback"
+    //% onClick.shadow="function"
     //% onClick.draggableParameters
     //% weight=100
     export function createButton(sprite: Sprite, onClick: () => void): UIElement {
