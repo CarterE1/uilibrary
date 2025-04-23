@@ -28,7 +28,7 @@ namespace UILibrary {
 
     //% block="create page using $elements"
     //% blockId="uilibrary_createpage"
-    //% elements.shadow="lists_create_with"
+    //% elements.shadow="list"
     //% elements.defl="screen_image_picker"
     //% group="Pages"
     //% weight=100
