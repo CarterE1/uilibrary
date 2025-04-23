@@ -29,7 +29,7 @@ namespace UILibrary {
     //% block="create page using $elements"
     //% blockId="uilibrary_createpage"
     //% elements.shadow="lists_create_with"
-    //% elements.defl=createButton
+    //% elements.defl="uilibrary_createbutton"
     //% group="Pages"
     //% weight=100
     export function createPage(elements: UIElement[]): UIPage {
