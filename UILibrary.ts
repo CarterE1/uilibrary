@@ -6,7 +6,7 @@
 //% groups=['Elements', 'Pages']
 namespace UILibrary {
     //% block="create button $sprite || when clicked"
-    //% blockId="uilibrary_createbutton"
+    //% blockId="createbutton"
     //% sprite.shadow="variables_get"
     //% sprite.defl="mySprite"
     //% group="Elements"
@@ -16,7 +16,7 @@ namespace UILibrary {
     }
 
     //% block="when $element button is clicked run"
-    //% blockId="uilibrary_onbuttonclick"
+    //% blockId="onbuttonclick"
     //% element.shadow="variables_get"
     //% element.defl="button"
     //% group="Elements"
@@ -29,7 +29,7 @@ namespace UILibrary {
     //% block="create page using $elements"
     //% blockId="uilibrary_createpage"
     //% elements.shadow="lists_create_with"
-    //% elements.defl=[createButton, createButton, createButton]
+    //% elements.defl="createbutton"
     //% group="Pages"
     //% weight=100
     export function createPage(elements: UIElement[]): UIPage {

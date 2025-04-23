@@ -27,8 +27,6 @@ class UIPage {
     }
 }
 
-//% block="UIElement"
-//% blockId="createUIElement"
 class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
