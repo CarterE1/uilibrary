@@ -28,13 +28,15 @@ namespace UILibrary {
 
     //% block="create page using $elements"
     //% blockId="uilibrary_createpage"
-    // sprite.shadow="variables_get"
-    // sprite.defl="mySprite"
+    // sprite.shadow="lists_create_with"
+    // sprite.defl="UIElement"
     //% group="Pages"
     //% weight=100
     export function createPage(elements: UIElement[]): UIPage {
         return new UIPage(elements)
     }
+
+    
 
     
     browserEvents.MouseLeft.onEvent(browserEvents.MouseButtonEvent.Pressed, function (x: number, y: number) {
