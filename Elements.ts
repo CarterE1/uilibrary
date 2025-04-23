@@ -27,7 +27,8 @@ class UIPage {
     }
 }
 
-//% blockNamespace=UILibrary color="#FF8000"
+//% block="UIElement"
+//% blockId="createUIElement"
 class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
