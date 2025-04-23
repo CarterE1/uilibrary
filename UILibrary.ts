@@ -28,8 +28,8 @@ namespace UILibrary {
 
     //% block="create page using $elements"
     //% blockId="uilibrary_createpage"
-    //% sprite.shadow="variables_get"
-    //% sprite.defl="list"
+    //% elements.shadow=variables_get
+    //% elements.defl=list
     //% group="Pages"
     //% weight=100
     export function createPage(elements: UIElement[]): UIPage {
