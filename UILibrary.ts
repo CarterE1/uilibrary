@@ -11,8 +11,8 @@ namespace UILibrary {
     //% sprite.defl="mySprite"
     //% group="Elements"
     //% weight=100
-    export function createButton(sprite: Sprite): UIElement {
-        return new UIElement(sprite)
+    export function createButton(sprite: Sprite): void {
+        let button = new UIElement(sprite)
     }
 
     //% block="when $element button is clicked run"
@@ -32,8 +32,8 @@ namespace UILibrary {
     //% elements.defl="createbutton"
     //% group="Pages"
     //% weight=100
-    export function createPage(elements: any[]): UIPage {
-        return new UIPage(elements)
+    export function createPage(elements: any[]): void {
+        let page = new UIPage(elements)
     }
 
     
