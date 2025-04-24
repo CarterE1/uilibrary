@@ -12,7 +12,7 @@ namespace UILibrary {
     //% group="Elements"
     //% weight=100
     export function createButton(sprite: Sprite): UIElement {
-        return new UIElement(sprite)
+        return new UILibrary.UIElement(sprite)
     }
 
     //% block="when $element button is clicked run"
@@ -33,7 +33,7 @@ namespace UILibrary {
     //% group="Pages"
     //% weight=100
     export function createPage(elements: any[]): UIPage {
-        return new UIPage(elements)
+        return new UILibrary.UIPage(elements)
     }
 
     

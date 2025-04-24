@@ -1,4 +1,5 @@
-class UIPage {
+namespace UILibrary {
+export class UIPage {
     static instances: UIPage[] = []
     public elements: UIElement[]
 
@@ -28,7 +29,7 @@ class UIPage {
 }
 
 //%
-class UIElement {
+export class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
     public sprite: Sprite
@@ -74,7 +75,7 @@ class UIElement {
     }
 }
 
-class ScrollingFrame {
+export class ScrollingFrame {
     static instances: ScrollingFrame[] = []
 
     public elements: UIElement[]
@@ -171,4 +172,5 @@ class BoundingBox {
     public IsPositionInBoundingBox(x: number, y: number): boolean {
         return (x > this.xMin && x < this.xMax) && (y > this.yMin && y < this.yMax)
     }
+}
 }
