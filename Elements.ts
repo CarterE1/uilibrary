@@ -27,6 +27,7 @@ class UIPage {
     }
 }
 
+//%
 class UIElement {
     static instances: UIElement[] = []
     public boundingBox: BoundingBox
@@ -64,6 +65,9 @@ class UIElement {
         this.sprite.setFlag(SpriteFlag.Invisible, false)
     }
 
+    //% block="Set $this position with $x and $y"
+    //% group="Elements"
+    //% weight="98"
     public SetPosition(x: number, y: number) {
         this.sprite.setPosition(x, y)
         this.boundingBox.CalculateBoundingBox(this.sprite)
