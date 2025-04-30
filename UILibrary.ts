@@ -33,7 +33,8 @@ namespace UILibrary {
     //% group="Pages"
     //% weight=100
     export function createPage(elements: any[]): UIPage {
-        return new UILibrary.UIPage(elements)
+        let newPage = new UILibrary.UIPage(elements)
+        return newPage
     }
 
     
